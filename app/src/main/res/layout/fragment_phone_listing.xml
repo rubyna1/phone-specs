@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:clickable="true"
+    tools:context=".ui.phone.PhoneListingFragment">
+
+    <RelativeLayout
+        android:id="@+id/fragment_phone_listing_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#1CB098">
+
+        <ImageView
+            android:id="@+id/fragment_phone_listing_back_image_view"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_left_24" />
+
+        <EditText
+            android:id="@+id/fragment_phone_listing_search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray"
+            android:layout_toEndOf="@+id/fragment_phone_listing_back_image_view"
+            android:background="@drawable/rounded_corner_button"
+            android:drawableStart="@drawable/ic_baseline_search_24"
+            android:hint="search..."
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_phone_listing_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_phone_listing_tool_bar"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_phone_listing_search_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_phone_listing_tool_bar"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/fragment_phone_listing_error_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:text="@string/error" />
+
+    <ProgressBar
+        android:id="@+id/fragment_phone_listing_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_phone_listing_tool_bar"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
